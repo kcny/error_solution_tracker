@@ -1,2 +1,17 @@
-%h1 New
-%p This will be form for creating new logs
+%h1 My Errors and Solutions Entry
+%p Please fill in the form below and submit your errors and solutions.
+
+%label{:for => "#mesEntry"} Please select a program.
+%input#mesEntry{:list => "mySelection", :type => "text"}
+%datalist#mySelection
+  %option Ruby
+  %option RSpec
+  %option Rails
+  %option PostgreSQL
+  %0ption SQLite
+  %option Ubuntu 
+  %option Linux
+  %option OSX
+  %option Windows
+= render 'form'  
+
