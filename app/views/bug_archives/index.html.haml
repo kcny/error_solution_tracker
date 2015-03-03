@@ -1,0 +1,17 @@
+%h1
+  There are #{pluralize(@bug_archives.size, 'bug archive')} on record.
+
+- @bug_archives.each do |bug_archive|
+  %article
+    %header
+      %h2= link_to bug_archive.title, bug_archive 
+    %table
+      %tr
+        %th Error:
+        %td= truncate(bug_archive.error,length: 40, seperator: ' ')
+      %tr
+        %th Solution:
+        %td= truncate(bug_archive.solution,length: 40, seperator: ' ')
+      %tr
+        %th Note:
+        %td= truncate(bug_archive.note,length: 40, seperator: ' ')

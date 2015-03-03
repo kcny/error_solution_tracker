@@ -1,0 +1,14 @@
+%body
+  %article
+    %h1= @bug_archive.title
+  %h4 Enter a short error message.
+  %p
+    = @bug_archive.error
+  %h4 Enter a code or solution you used to solve the problem.
+  %p
+    = @bug_archive.solution
+  %h4 Add other important notes that you need to remember..
+  %p
+    = @bug_archive.note
+    
+  = link_to "Bug Archives Listing", bug_archives_path  
