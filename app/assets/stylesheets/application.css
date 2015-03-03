@@ -14,8 +14,7 @@
  *= require_tree .
  *= require_self
  */
-
-@import "bootstrap-sprockets";
+c
 @import "bootstrap";
 
 /* mixins, variables, etc. */
