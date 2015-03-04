@@ -1,5 +1,5 @@
 %h1
-  There are #{pluralize(@bug_archives.size, 'bug archive')} on record.
+  #{pluralize(@bug_archives.size, 'bug archive')} 
 
 - @bug_archives.each do |bug_archive|
   %article
