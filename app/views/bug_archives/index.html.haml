@@ -4,7 +4,7 @@
 - @bug_archives.each do |bug_archive|
   %article
     %header
-      %h2= link_to bug_archive.title, bug_archive 
+      = link_to bug_archive.title, bug_archive 
     %table
       %tr
         %th Error:
@@ -15,3 +15,6 @@
       %tr
         %th Note:
         %td= truncate(bug_archive.note,length: 40, seperator: ' ')
+      %tr
+        %th Date: 
+        %td= bug_archive.created_at   

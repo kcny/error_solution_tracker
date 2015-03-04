@@ -10,5 +10,8 @@
   %h4 Add other important notes that you need to remember..
   %p
     = @bug_archive.note
+  %h4 Date
+  %p
+    = @bug_archive.created_at 
     
   = link_to "Bug Archives Listing", bug_archives_path  
