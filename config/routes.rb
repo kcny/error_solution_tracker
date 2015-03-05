@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'pages/about'
   get 'pages/contact'
-  # get 'bug_archives' => "bug_archives#index"
-  # get 'bug_archives/:id' => "bug_archives#show", as: "bug_archive"
-
+  
+  resources :bug_archives do
+    collection do  
+      post :search, to: "bug_archives#search"
+    end
+  end
   get 'ui(/:action)', controller: 'ui'
-
-  resources :bug_archives
-
 end

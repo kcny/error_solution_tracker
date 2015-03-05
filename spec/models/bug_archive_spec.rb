@@ -11,7 +11,7 @@ describe BugArchive do
   it "should save bug archives" do
     bug_archive = BugArchive.create(bug_archive_attributes)
     bug_archive.save
-    BugArchive.first.title.should == "Rbenv"
+    expect(BugArchive.first).to eq(bug_archive)
   end
 
   describe "search_by_title" do 

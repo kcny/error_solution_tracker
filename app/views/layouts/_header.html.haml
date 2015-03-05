@@ -6,5 +6,9 @@
         %li= link_to "Bug Archives", bug_archives_path
         %li= link_to "About", pages_about_path
         %li= link_to "Contact", pages_contact_path
-      
-          
+        =form_tag search_bug_archives_path, class: "span5 for-search" do
+          %input.search-query(name="search_term" type="text" placeholder="Search for bug archives here")
+          %button.btn(type="submit") Search
+
+        
+

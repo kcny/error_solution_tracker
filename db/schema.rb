@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150303133706) do
+ActiveRecord::Schema.define(version: 20150305150718) do
 
   create_table "bug_archives", force: true do |t|
     t.string   "title"
     t.text     "error"
     t.text     "solution"
     t.text     "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "full_name"
+    t.string   "email"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
