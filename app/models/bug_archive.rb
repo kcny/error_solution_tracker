@@ -1,4 +1,5 @@
 class BugArchive < ActiveRecord::Base
+  belongs_to :user
   validates_presence_of :title, :error, :solution, :note
 
 
