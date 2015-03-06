@@ -1,7 +1,5 @@
-
 %nav.navbar.navbar-inverse{:role => "navigation"}
   / Brand and toggle get grouped for better mobile display
-  
   .navbar-header
     %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
       %span.sr-only Toggle navigation
@@ -14,22 +12,21 @@
       %form.navbar-form{:role => "search"}
       =form_tag search_bug_archives_path, class: "span5 for-search" do
         .input-group
-          %input.form-control(name="search_term" type="text" placeholder="Search for bug archives here")
+          %input.form-control(name="search_term" type="text" placeholder="Search archives")
             .input-group-btn
               %button.btn.btn-default(name="search_term" type="text" placeholder="Search for bug archives here")
                 %i.glyphicon.glyphicon-search
-                
+    / links           
     %ul.nav.navbar-nav.navbar-right
       %li
         = link_to "Home", root_path
       %li
-        = link_to "Bug Archives", bug_archives_path
+        = link_to "Index", bug_archives_path
       %li
         = link_to "About", pages_about_path
       %li
         = link_to "Contact", pages_contact_path
 
-  / /.navbar-collapse
 
 
 
