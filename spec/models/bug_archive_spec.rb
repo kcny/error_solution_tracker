@@ -15,6 +15,7 @@ describe BugArchive do
   end
 
   describe "search_by_title" do 
+    
     it "returns an empty arrary if there is no match" do
       bug_archive1 = BugArchive.create(bug_archive_attributes(title: "Ruby"))  
       bug_archive2 = BugArchive.create(bug_archive_attributes(title: "SQL")) 
