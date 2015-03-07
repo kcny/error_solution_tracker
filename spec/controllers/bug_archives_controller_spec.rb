@@ -1,12 +1,26 @@
 require 'spec_helper'
-
-describe BugArchivesController do
-  describe "GET new" do 
-    it "set @bug_archives new" do
-      get :new
-      expect(assigns(:bug_archive)).to be_instance_of(BugArchive) 
+  
+  describe BugArchivesController do
+    describe "GET new" do 
+      it "set @bug_archives new" do
+        get :new
+        expect(assigns(:bug_archive)).to be_instance_of(BugArchive) 
+      end
     end
-  end
+
+  describe "POST create" do
+    context "with valid entry" do
+    
+    before do
+      post :create, bug_archive: Fabricate.attributes_for(:bug_archive)
+    end  
+
+    it "creates the bug_archive" do
+      bug_archive = BugArchive.create(bug_archive_attributes)
+      expect(BugArchive.count).to eq(1)
+      end 
+    end  
+  end  
 
   describe "GET index" do 
     it "assigns all bug archvies as @bug_archives" do
