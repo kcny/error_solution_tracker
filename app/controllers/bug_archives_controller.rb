@@ -2,13 +2,13 @@ class BugArchivesController < ApplicationController
 
   # before_action :set_bug_archive, only: [:show, :edit, :update, :destroy]
 
-def new
-  @bug_archive = BugArchive.new     
-end  
+  def new
+    @bug_archive = BugArchive.new     
+  end  
 
-#   def index
-#     @bug_archives = BugArchive.all
-#   end
+  def index
+    @bug_archives = BugArchive.all
+  end
 
 #   def show
 #     @bug_archive = BugArchive.find(params[:id])
