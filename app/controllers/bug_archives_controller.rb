@@ -10,13 +10,13 @@ class BugArchivesController < ApplicationController
     @bug_archives = BugArchive.all
   end
 
-#   def show
-#     @bug_archive = BugArchive.find(params[:id])
-#   end
+  def show
+    @bug_archive = BugArchive.find(params[:id])
+  end
 
-#   def search
-#     @results = BugArchive.search_by_title(params[:search_term]) 
-#   end 
+  # def search
+  #   @results = BugArchive.search_by_title(params[:search_term]) 
+  # end 
 
 # private
 
@@ -24,7 +24,7 @@ class BugArchivesController < ApplicationController
   #   @bug_archive = BugArchive.find(params[:id])
   # end
 
-#   def bug_archive_params
-#     params.require(:bug_archive).permit(:title, :error, :solution, :note)
-#   end
+  def bug_archive_params
+    params.require(:bug_archive).permit(:title, :error, :solution, :note)
+  end
 end

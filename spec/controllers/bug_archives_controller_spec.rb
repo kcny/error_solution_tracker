@@ -20,4 +20,13 @@ describe BugArchivesController do
     expect(response).to render_template("index") 
     end
   end
+
+  describe "GET show" do 
+    it "sets @bug_archive for authenticated users" do 
+    session[:user_id] = Fabricate(:user).id
+      bug_archive = Fabricate(:bug_archive)
+      get :show, id: bug_archive.id 
+      expect(assigns(:bug_archive)).to eq(bug_archive)
+    end
+  end
 end
