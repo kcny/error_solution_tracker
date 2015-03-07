@@ -19,19 +19,35 @@ require 'spec_helper'
       bug_archive = BugArchive.create(bug_archive_attributes)
       expect(BugArchive.count).to eq(1)
       end 
-    end  
+    end
+
+    context "with invalid entry" do
+      before do 
+        post :create, bug_archive: {title: "invalid"}
+      end 
+
+      it "does not create a bug archive" do 
+        expect(BugArchive.count).to eq(0)
+      end
+
+      it "render a :new template" do
+        # Ask a TA about this ****
+        get :new
+        expect(response).to render_template :new
+      end
+    end
   end  
 
   describe "GET index" do 
     it "assigns all bug archvies as @bug_archives" do
       bug_archive = BugArchive.create(bug_archive_attributes)
-        get :index
-        expect(assigns(:bug_archives)).to eq([bug_archive])
+      get :index
+      expect(assigns(:bug_archives)).to eq([bug_archive])
     end
 
     it "renders the index template" do
-    get :index
-    expect(response).to render_template("index") 
+      get :index
+      expect(response).to render_template("index") 
     end
   end
 

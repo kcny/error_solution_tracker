@@ -23,9 +23,27 @@ class BugArchivesController < ApplicationController
   def show
   end
 
-  # def search
-  #   @results = BugArchive.search_by_title(params[:search_term]) 
-  # end 
+  def edit
+    
+  end
+
+  def update
+    if @bug_archive.update(bug_archive_params)
+      redirect_to @bug_archive
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @bug_archive.destroy
+
+    resdirect_to bug_archives_path
+  end
+
+  def search
+    @results = BugArchive.search_by_title(params[:search_term]) 
+  end 
 
 private
 
