@@ -29,7 +29,7 @@ describe SessionsController do
       end
       
       it "redirects to index page" do 
-        expect(response).to redirect_to bug_archives_path
+        expect(response).to redirect_to root_path
       end
         
       it "sets a notice" do
