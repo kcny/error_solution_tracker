@@ -7,7 +7,7 @@ describe "Navigate Bug Archives" do
     
     visit bug_archive_url(bug_archive)
 
-    click_link "Bug Archives Listing"
+    click_link "Back to Index"
 
     expect(current_path).to eq(bug_archives_path)
   end

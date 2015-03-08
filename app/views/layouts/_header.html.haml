@@ -12,9 +12,9 @@
       %form.navbar-form{:role => "search"}
       = form_tag search_bug_archives_path, class: "span5 for-search" do
         .input-group
-          %input.form-control(name="search_term" type="text" placeholder="Search archives")
+          %input.form-control(name="search_term" type="text" placeholder="Search archives by title")
             .input-group-btn
-              %button.btn.btn-default(name="search_term" type="text" placeholder="Search for bug archives here")
+              %button.btn.btn-default(type="submit")
                 %i.glyphicon.glyphicon-search
     / links           
     %ul.nav.navbar-nav.navbar-right

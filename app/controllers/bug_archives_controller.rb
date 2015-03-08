@@ -1,5 +1,5 @@
 class BugArchivesController < ApplicationController
-  before_filter :require_user, except: [:index, :new, :show]
+  before_filter :require_user, except: [:index, :new, :show, :search]
   before_action :set_bug_archive, only: [:show, :edit, :update, :destroy]
 
   def new

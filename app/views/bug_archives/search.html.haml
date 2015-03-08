@@ -1,5 +1,8 @@
-- @results.each do |bug_archive|
-  .bug_archive.span2
-    = link_to bug_archive do 
-      %li
-        = bug_archive
+%h1 Your search results are:
+
+.well
+  - @results.each do |bug_archive|
+    .bug_archive.span2
+      = link_to bug_archive do 
+        %li
+          = bug_archive.title

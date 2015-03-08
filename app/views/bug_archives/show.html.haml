@@ -1,17 +1,17 @@
 %body
   %article
     %h1= @bug_archive.title
-  %h4 Enter a short error message.
+  %h4 What was the error message?
   %p
     = @bug_archive.error
-  %h4 Enter a code or solution you used to solve the problem.
+  %h4 What was the solution?
   %p
     = @bug_archive.solution
-  %h4 Add other important notes that you need to remember..
+  %h4 Add a brief note to help quickly resolve the issue next time:
   %p
     = @bug_archive.note
-  %h4 Date
+  %h4 Date:
   %p
     = @bug_archive.created_at 
     
-  = link_to "Bug Archives Listing", bug_archives_path  
+  = link_to "Back to Index", bug_archives_path, class: "btn btn-primary btn-small"  

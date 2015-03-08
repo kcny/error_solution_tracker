@@ -1,26 +1,28 @@
 %h1
-  #{pluralize(@bug_archives.size, 'bug archive')} 
-
+  #{pluralize(@bug_archives.size, 'bug archive')}
+%p   
+  - if logged_in?
+    %nav= link_to "New Entry", new_bug_archive_path, class: "btn btn-small btn-primary"
+  - else 
 - @bug_archives.each do |bug_archive|
   %article
     %header
-      = link_to bug_archive.title, bug_archive
   .well    
     %table
       %tr
+        = link_to bug_archive.title, bug_archive
         %th Error:
-        %td= truncate(bug_archive.error,length: 40, seperator: ' ')
+        %td= truncate(bug_archive.error,length: 150, seperator: ' ')
       %tr
         %th Solution:
-        %td= truncate(bug_archive.solution,length: 40, seperator: ' ')
+        %td= truncate(bug_archive.solution,length: 150, seperator: ' ')
       %tr
         %th Note:
-        %td= truncate(bug_archive.note,length: 40, seperator: ' ')
+        %td= truncate(bug_archive.note,length: 150, seperator: ' ')
       %tr
-        %th Archived on: 
+        %th Date: 
         %td= bug_archive.created_at
-- if logged_in?
-  %nav= link_to "New Entry", new_bug_archive_path, class: "btn btn-small btn-success"
+
    
 
 
