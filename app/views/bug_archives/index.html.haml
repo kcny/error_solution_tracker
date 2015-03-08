@@ -1,5 +1,7 @@
-%h1
-  #{pluralize(@bug_archives.size, 'bug archive')}
+%h1 Index
+
+%h2
+  There are #{pluralize(@bug_archives.size, 'bug archive')} on the index page.
 %p   
   - if logged_in?
     %nav= link_to "New Entry", new_bug_archive_path, class: "btn btn-small btn-primary"
