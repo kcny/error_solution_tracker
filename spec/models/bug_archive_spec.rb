@@ -40,7 +40,7 @@ describe BugArchive do
       bug_archive1 = BugArchive.create(bug_archive_attributes(title: "Ruby"))  
       bug_archive2 = BugArchive.create(bug_archive_attributes(title: "Ruby on Rails")) 
 
-      expect(BugArchive.search_by_title("Ruby")).to eq([bug_archive1, bug_archive2])
+      expect(BugArchive.search_by_title("Ruby")).to eq([bug_archive2, bug_archive1])
     end
 
     it "an empty array for an empty search" do
