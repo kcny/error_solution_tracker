@@ -20,7 +20,7 @@ describe UsersController do
         expect(User.count).to eq(1)
       end
       it "redirects to login page" do 
-        expect(response).to redirect_to login_path
+        expect(response).to redirect_to new_bug_archive_path
       end    
     end
 

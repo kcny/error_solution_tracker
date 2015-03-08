@@ -18,6 +18,7 @@ class BugArchivesController < ApplicationController
 
   def index
     @bug_archives = BugArchive.all
+    @bug_archives = BugArchive.order(:created_at).reverse
   end
 
   def show

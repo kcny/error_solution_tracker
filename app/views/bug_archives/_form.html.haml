@@ -1,0 +1,27 @@
+= form_for @bug_archive do |f|
+  - if @bug_archive.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@bug_archive.errors.count, "error")
+        prohibited this arhive from being saved:
+      %ul
+        - @bug_archive.errors.full_messages.each do |msg|
+          %li= msg
+  %p
+    = f.label :title
+    %br/
+    = f.text_field :title
+  %p
+    = f.label :error
+    %br/
+    = f.text_area :error
+  %p
+    = f.label :solution
+    %br/
+    = f.text_area :solution
+  %p
+    = f.label :note
+    %br/
+    = f.text_area :note 
+  %p
+    = f.submit "Archive", class: "btn btn-primary"

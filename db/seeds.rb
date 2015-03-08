@@ -44,3 +44,16 @@ BugArchive.create!([
     note: " This is a temporary fix. Need to find a permanent one."
   }
 ])
+
+User.create!([
+  {
+    full_name: "Zebron Zimuto",
+    email: "zebron@example.com",
+    password: "passpass"
+  },
+  {
+    full_name: "Anesu Hove",
+    email: "anesu@example.com",
+    password: "passpass"
+  }
+  ])

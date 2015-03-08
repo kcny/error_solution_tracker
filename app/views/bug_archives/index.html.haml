@@ -4,7 +4,8 @@
 - @bug_archives.each do |bug_archive|
   %article
     %header
-      = link_to bug_archive.title, bug_archive 
+      = link_to bug_archive.title, bug_archive
+  .well    
     %table
       %tr
         %th Error:
@@ -16,5 +17,10 @@
         %th Note:
         %td= truncate(bug_archive.note,length: 40, seperator: ' ')
       %tr
-        %th Date: 
-        %td= bug_archive.created_at   
+        %th Archived on: 
+        %td= bug_archive.created_at
+- if logged_in?
+  %nav= link_to "New Entry", new_bug_archive_path, class: "btn btn-small btn-success"
+   
+
+

@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id 
       flash[:notice] = "Welcome, you've successfully logged in."
-      redirect_to root_path
+      redirect_to bug_archives_path
     else
       flash[:error] = "The combination of your email/password is incorrect."
       redirect_to login_path

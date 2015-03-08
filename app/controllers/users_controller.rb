@@ -7,7 +7,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to login_path
+      session[:user_id] = @user.id
+      flash[:notice] = "You are now registered!"
+      redirect_to new_bug_archive_path
     else
       render :new
     end
