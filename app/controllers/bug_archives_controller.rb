@@ -43,7 +43,8 @@ class BugArchivesController < ApplicationController
   end
 
   def search
-    @results = BugArchive.search_by_title(params[:search_term]) 
+    # binding.pry
+    @results = BugArchive.search_by_title(params[:search_term.downcase]) 
   end 
 
 private
