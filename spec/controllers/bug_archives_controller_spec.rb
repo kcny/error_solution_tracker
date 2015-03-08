@@ -59,4 +59,7 @@ require 'spec_helper'
       expect(assigns(:bug_archive)).to eq(bug_archive)
     end
   end
+
+  describe "POST search" do 
+  end
 end

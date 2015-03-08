@@ -1,5 +1,5 @@
--@results.each do |bug_archive|
+- @results.each do |bug_archive|
   .bug_archive.span2
-    = link_to bug_archive_path(bug_archive)
-    %p
-    
+    = link_to bug_archive do 
+      %li
+        = bug_archive
