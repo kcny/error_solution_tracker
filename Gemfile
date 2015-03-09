@@ -13,7 +13,6 @@ ruby '2.1.2'
   gem 'bootstrap_form'
   gem 'bcrypt'
   gem 'fabrication'
-  gem 'turbolinks' 
   gem 'jbuilder'  
 
 group :development do
