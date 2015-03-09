@@ -29,12 +29,6 @@ require 'spec_helper'
       it "does not create a bug archive" do 
         expect(BugArchive.count).to eq(0)
       end
-
-      it "render a :new template" do
-        # Ask a TA about this ****
-        get :new
-        expect(response).to render_template :new
-      end
     end
   end  
 
@@ -59,7 +53,6 @@ require 'spec_helper'
       expect(assigns(:bug_archive)).to eq(bug_archive)
     end
   end
-
-  describe "POST search" do 
-  end
 end
+
+ 

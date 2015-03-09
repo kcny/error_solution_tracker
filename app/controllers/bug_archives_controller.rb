@@ -39,11 +39,10 @@ class BugArchivesController < ApplicationController
   def destroy
     @bug_archive.destroy
 
-    resdirect_to bug_archives_path
+    redirect_to bug_archives_path
   end
 
   def search
-    # binding.pry
     @results = BugArchive.search_by_title(params[:search_term.downcase]) 
   end 
 
