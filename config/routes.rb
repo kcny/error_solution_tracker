@@ -3,11 +3,6 @@ Rails.application.routes.draw do
   get 'pages/about'
   get 'pages/contact'
   
-  get '/register',       to: 'users#new'
-  get '/login',         to: 'sessions#new'
-  post '/login',        to: 'sessions#create'
-  delete '/logout',        to: 'sessions#destroy'
-  
   resources :users
   
   resources :bug_archives do
@@ -16,5 +11,10 @@ Rails.application.routes.draw do
     end
   end
   get 'ui(/:action)', controller: 'ui'
+
+  get '/register',       to: 'users#new'
+  get '/login',         to: 'sessions#new'
+  post '/login',        to: 'sessions#create'
+  delete '/logout',        to: 'sessions#destroy'
 
 end
