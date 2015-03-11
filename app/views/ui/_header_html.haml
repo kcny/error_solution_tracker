@@ -1,11 +1,28 @@
-%header.navbar.navbar-fixed-top.navbar-inverse
-  .container
-    %nav
-      %ul.nav.navbar-nav.pull-right
-        %li= link_to "Home", root_path
-        %li= link_to "Bug Archives", bug_archives_path
+%nav.navbar.navbar-inverse{:role => "navigation"}
+  .navbar-header
+    %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+      %span.sr-only Toggle navigation
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar 
+  #bs-example-navbar-collapse-1.collapse.navbar-collapse
+    .col-sm-3.col-md-3
+      %form.navbar-form{:role => "search"}
+      = form_tag search_bug_archives_path, class: "span5 for-search" do
+        .input-group
+          %input.form-control(name="search_term" type="text" placeholder="Search archives by title")
+            .input-group-btn
+              %button.btn.btn-default(type="submit")
+                %i.glyphicon.glyphicon-search         
+    %ul.nav.navbar-nav.navbar-right
+    
+      %li= link_to "Home", root_path
+      %li= link_to "Index", bug_archives_path
+     
+      - if logged_in?
+        %li= link_to "Log Out", logout_path
+      - else
         %li= link_to "About", pages_about_path
         %li= link_to "Contact", pages_contact_path
-        =form_tag search_bug_archives_path, class: "span5 for-search" do
-          %input.search-query(name="search_term" type="text" placeholder="Search for bug archives here")
-          %button.btn(type="submit") Search= link_to "Contact", pages_contact_path
+        %li= link_to "Register", register_path
+        %li= link_to "Log In", login_path

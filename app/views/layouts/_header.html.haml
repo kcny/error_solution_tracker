@@ -1,12 +1,10 @@
 %nav.navbar.navbar-inverse{:role => "navigation"}
-  / Brand and toggle get grouped for better mobile display
   .navbar-header
     %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
       %span.sr-only Toggle navigation
       %span.icon-bar
       %span.icon-bar
       %span.icon-bar 
-  / Collect the nav links, forms, and other content for toggling
   #bs-example-navbar-collapse-1.collapse.navbar-collapse
     .col-sm-3.col-md-3
       %form.navbar-form{:role => "search"}
@@ -15,28 +13,19 @@
           %input.form-control(name="search_term" type="text" placeholder="Search archives by title")
             .input-group-btn
               %button.btn.btn-default(type="submit")
-                %i.glyphicon.glyphicon-search
-    / links           
+                %i.glyphicon.glyphicon-search         
     %ul.nav.navbar-nav.navbar-right
     
-      %li
-        = link_to "Home", root_path
-
-      %li
-        = link_to "Index", bug_archives_path
+      %li= link_to "Home", root_path
+      %li= link_to "Index", bug_archives_path
      
       - if logged_in?
-        %li
-          = link_to "Log Out", logout_path
+        %li= link_to "Log Out", logout_path
       - else
-        %li
-          = link_to "About", pages_about_path
-        %li
-          = link_to "Contact", pages_contact_path
-        %li
-          = link_to "Register", register_path
-        %li  
-          = link_to "Log In", login_path
+        %li= link_to "About", pages_about_path
+        %li= link_to "Contact", pages_contact_path
+        %li= link_to "Register", register_path
+        %li= link_to "Log In", login_path
 
 
 

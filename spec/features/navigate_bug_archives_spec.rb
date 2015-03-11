@@ -5,7 +5,7 @@ describe "Navigate Bug Archives" do
   it "permits navigation from show to index page" do 
     bug_archive = BugArchive.create(bug_archive_attributes)     
     visit bug_archive_url(bug_archive)
-    click_link "Back to Index"
+    click_link "Back"
 
     expect(current_path).to eq(bug_archives_path)
   end
