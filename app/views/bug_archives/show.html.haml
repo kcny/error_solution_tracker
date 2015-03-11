@@ -17,4 +17,3 @@
   = link_to "Back", bug_archives_path, class: "btn btn-primary btn-small"
   - if current_user
     = link_to 'Edit', edit_bug_archive_path(@bug_archive), class: "btn btn-success btn-small"
-    = link_to 'Delete', bug_archive_path(@bug_archive), method: :delete, data: { confirm: 'Are your sure?'}, class: "btn btn-danger btn-small"   
