@@ -18,8 +18,8 @@ require 'spec_helper'
     it "creates the bug_archive" do
       bug_archive = BugArchive.create(bug_archive_attributes)
       expect(BugArchive.count).to eq(1)
-      end 
-    end
+    end 
+  end
 
     context "with invalid entry" do
       before do 

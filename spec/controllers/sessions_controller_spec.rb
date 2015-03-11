@@ -39,8 +39,9 @@ describe SessionsController do
     
     context "with invalid credentials" do
       
+      let(:zebron) { Fabricate :user }
+
       before do 
-        zebron = Fabricate(:user)
         post :create, email: zebron.email, password: zebron.password + 'exyabc'
       end
       
@@ -52,8 +53,8 @@ describe SessionsController do
         expect(response).to redirect_to login_path
 
       end
-      it "set an error message" do 
-        expect(response).not_to be_blank
+      it "sets an error message" do 
+        expect(flash[:error]).not_to be_blank
 
       end
     end
